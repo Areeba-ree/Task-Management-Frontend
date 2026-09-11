@@ -68,7 +68,7 @@ Open `src/api/axios.js` and confirm the `baseURL` points to your running backend
 
 ```javascript
 const API = axios.create({
-  baseURL: 'http://localhost:3000', 
+baseURL: import.meta.env.VITE_API_BASE_URL || 'https://task-management-system-b7h9.onrender.com',
 });
 ```
 

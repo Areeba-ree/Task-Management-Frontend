@@ -43,6 +43,11 @@ const Dashboard = () => {
     return 'Good evening';
   };
 
+  const getFormattedDate = () => {
+  const options = { weekday: 'long', month: 'long', day: 'numeric' };
+  return new Date().toLocaleDateString('en-US', options);
+  };
+
   const handleOpenCreateModal = () => {
     setEditingTask(null);
     setShowModal(true);
@@ -165,7 +170,7 @@ const Dashboard = () => {
         <header className="mb-8">
           <div className="flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-widest text-[#F05A28] mb-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F05A28]"></span>
-            Thursday, September 10
+             {getFormattedDate()} 
           </div>
           
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
